@@ -5,7 +5,7 @@ Pulse extraction using POS algorithm (%(version)s)
 
 import matplotlib
 #matplotlib.use("TkAgg")
-matplotlib.use("MacOSX")
+#matplotlib.use("MacOSX")
 from matplotlib import pyplot as plt
 
 import os
@@ -36,7 +36,7 @@ def main(user_input=None):
     nsegments = 12
     
     plot =  False
-    image_show = True
+    image_show = False
 
     left_increase_ratio = 0.05 #5%
     top_increase_ratio = 0.25 #5%
@@ -71,7 +71,7 @@ def main(user_input=None):
     i = start_index
 
     detector = dlib.get_frontal_face_detector()
-    predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+    predictor = dlib.shape_predictor("facial-landmarks-recognition/shape_predictor_68_face_landmarks.dat")
    
     while (i >= start_index and i < end_index):
         (grabbed, frame) = camera.read()
